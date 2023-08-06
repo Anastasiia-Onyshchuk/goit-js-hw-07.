@@ -1,5 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+console.log(galleryItems);
 const container = document.querySelector('.gallery')
 
 function createMarkup(arr) {
@@ -9,33 +10,24 @@ function createMarkup(arr) {
     <img class="gallery__image" src="${preview}"  alt="${description}"/>
     </a>
     </li>`
-    ).join('');     
-
+    ).join('');   
+    console.log(arr);
 }
 createMarkup(galleryItems);
 container.insertAdjacentHTML('beforeend', createMarkup(galleryItems));
-container.addEventListener('click', onImgClick)
-function onImgClick(evt) {
+console.log(SimpleLightbox);
+// container.addEventListener('click', onImgClick)
+function onClick(evt) {
     evt.preventDefault();
     if (evt.target.nodeName !== 'IMG') {
         return;
     }
-    console.log(evt.target);
- 
-    // const ImageSrc = evt.target.dataset.source;
-    //     const instance = basicLightbox.create(`
-    //     <div class = "modal">
-    //     <img src="${ImageSrc}" alt="${ImageSrc.description}"/>
-    //     </div>
-    // `)
-    //     instance.show();
-    // };
+}
     const lightbox = new SimpleLightbox('.gallery__item a', {
     captionsData: 'alt',
     captionDelay: 250,
 });
-    lightbox.showI();
-}
+    lightbox.show();
 
-// console.log(SimpleLightbox);
-console.log(galleryItems);
+
+

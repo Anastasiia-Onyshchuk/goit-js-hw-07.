@@ -20,12 +20,6 @@ function onImgClick(evt) {
     if (evt.target.nodeName !== 'IMG') {
         return;
     }
-    // if (evt.target === evt.currentTarget) {
-    //     return
-    // }
-    // if (!evt.target.classList.contains('.gallery__image')) {
-    //     return;
-    // }
     console.log(evt.target);
  
     const ImageSrc = evt.target.dataset.source;
@@ -50,22 +44,7 @@ function onImgClick(evt) {
         },
     });
     instance.show();
-windown.addEventListener('keydown', (e) => {
-    if (e.code === 'Escape') {
-        instance.close();
-    }
-});
-    //  instance.close();
 };
-// function showImg(e){
-//   e.preventDefault()
-//     e.ImageSrc.element().querySelector('img').src = e.target.dataset.source
-//   imgShow.show()
-
-// }
-
-// function closeImg(e){}
-
 console.log(galleryItems);
-// console.log(basicLightbox);
+
 
